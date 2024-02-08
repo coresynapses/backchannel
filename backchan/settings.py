@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'backchan.apps.'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         "OPTIONS": {
-            "service": "backchan_service",
-            "passfile": ".backchan_pgpass",
+            "service": "backchan",
+            "passfile": "~/.pgpass",
         }
     }
 }
