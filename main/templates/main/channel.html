@@ -1,8 +1,18 @@
+{% load static %}
 <html>
   <head>
     <title>Backchan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'main/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/bootstrap/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/bootstrap/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/bootstrap/css/bootstrap-utilities.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
   </head>
   <body>
     <h1>{{ name }}</h1>
+    <script src="{% static 'main/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'main/dynamic.js' %}"></script>
   </body>
 </html>
