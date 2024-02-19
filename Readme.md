@@ -9,6 +9,17 @@ functionality.
 
 An upgrade on both Reddit and 4chan.
 
+## Technologies Used
+
+Frontend:
+- Tailwind
+- React
+
+Backend:
+- Python
+- Django
+- PostgreSQL
+
 ## Channels
 
 A Channel is similar to a subreddit or a board.
