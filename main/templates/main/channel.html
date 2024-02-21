@@ -1,7 +1,7 @@
 {% load static %}
 <html>
   <head>
-    <title>Backchan</title>
+    <title>{{name}} - {{desc}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'main/bootstrap/css/bootstrap.min.css' %}">
@@ -12,7 +12,7 @@
   </head>
   <body id="channel">
     <nav class="navbar navbar-expand bg-body-secondary">
-      <div class="container-fluid">
+      <div class="container">
 	<div class="col">
 	  <a href="/create-account" role="button" class="btn btn-primary">Create Account</a>
 	  <a href="/log-in" role="button" class="btn btn-secondary">Log In</a>
@@ -22,6 +22,24 @@
     <div class="container text-center">
       <div class="row justify-content-center">
 	<h1>/{{name}}/ - {{desc}}</h1>
+      </div>
+    </div>
+    <div class="container px-4">
+      <h3 class="text-center"><a href="#">[Make Thread]</a></h3>
+      <div class="row">
+	{% for thread in threads %}
+	<div class="col-3">
+	  <img src="{% static 'main/images/circle.png' %}" class="img-thumbnail" alt="circle"/>
+	  <h5>
+	    <a href="/{{name}}/thread/{{thread.thread_id}}">
+	      /{{thread.thread_title}}/ - {{thread.thread_author}}
+	    </a>
+	  </h5>
+	  <p>
+	    {{thread.thread_content}}
+	  </p>
+	</div>
+	{% endfor %}
       </div>
     </div>
     <script src="{% static 'main/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
