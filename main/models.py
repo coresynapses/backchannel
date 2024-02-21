@@ -4,10 +4,13 @@ from django.db import models
 from django.utils import timezone
 
 class Channel(models.Model):
-    name = models.CharField(max_length=200)
+    channel_name = models.CharField(max_length=20)
+    channel_desc = models.CharField(max_length=250)
+    channel_threads = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
+
 
 class Thread(models.Model):
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
@@ -19,6 +22,7 @@ class Thread(models.Model):
 
     def __str__(self):
         return self.choice_text
+
 
 class Post(models.Model):
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
