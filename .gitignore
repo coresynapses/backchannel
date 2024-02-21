@@ -2,3 +2,4 @@
 *.sqlite3
 *.backchan_pgpass
 *.pyc
+*/__pycache__/*
