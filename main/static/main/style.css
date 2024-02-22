@@ -22,3 +22,161 @@
 /*     50%{background-position:2% 100%} */
 /*     100%{background-position:99% 0%} */
 /* } */
+
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Navbar */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+#nav-left {
+    display: flex;
+    align-items: center;
+}
+
+#nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+
+/* Home Page */
+
+#banner-container {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding: 200px 0px;
+    /* background: blue; */
+}
+
+#channel-container {
+    width: 60%;
+    margin: auto;
+    padding: 100px 0px;
+    /* background: red; */
+}
+
+#channel-container>h2 {
+    text-align: center;
+}
+
+#channel-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start stretch;
+}
+
+#channel-row>.column {
+    padding: 15px;
+}
+
+
+
+/* Channels */
+
+#channel-banner {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding: 100px 0px;
+}
+
+#threads-container {
+    margin: auto;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.thread {
+    width: 250px;
+    height: 300px;
+    padding: 20px;
+    margin: 5px;
+    background: #ddd;
+    border: solid 1px blue;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.thread-thumbnail {
+    width: 200px;
+    height: auto;
+}
+
+
+/* Threads */
+
+#initial-thread {
+    display: flex;
+    flex-direction: row;
+    background: yellow;
+}
+
+.post-thumbnail {
+    height: 300px;
+    width: auto;
+}
+
+.post-content {
+    background: green;
+}
+
+.post-info {
+    background: blue;
+}
+
+.post-text {
+    background: purple;
+}
+
+.post-title {
+    display: inline;
+    color: blue;
+    text-weight: bold;
+}
+
+.post-author {
+    display: inline;
+    color: red;
+}
+
+.post-date {
+    display: inline;
+    color: purple;
+}
+
+.post-id {
+    display: inline;
+    color: green;
+}
