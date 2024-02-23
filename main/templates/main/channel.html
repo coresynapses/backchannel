@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="">
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <style id="style-mode"></style>
   </head>
   <body id="channel">
     <nav>
       <div id="nav-left">
-	<a class="hidden" href="#"><img class="nav-icon" src="{% static 'main/icons/sun.png' %}" alt="sun"/></a>
-	<a href="#"><img class="nav-icon" src="{% static 'main/icons/moon.png' %}" alt="moon"/></a>
+	<a class="hidden" id="light-mode" href="#"><img class="nav-icon" src="{% static 'main/icons/sun.png' %}" alt="sun"/></a>
+	<a id="dark-mode"  href="#"><img class="nav-icon" src="{% static 'main/icons/moon.png' %}" alt="moon"/></a>
 	<a href="/">[Home Page]</a>
 	---
 	<a href="#">[Custom CSS]</a>
