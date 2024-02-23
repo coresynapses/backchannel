@@ -26,6 +26,7 @@ urlpatterns = [
     path('<str:channel_name>/', views.channel, name="channel"),
     path('<str:channel_name>/create-thread', views.create_thread, name="create-thread"),
     path('<str:channel_name>/thread/<int:thread_id>/', views.thread, name="thread"),
+    path('<str:channel_name>/thread/<int:thread_id>/create-post', views.create_post, name="create-post"),
     path('user/<int:user_id>/settings/', views.user_settings, name="user-settings"),
     path('user/<int:user_id>/mod-panel/', views.mod_panel, name="mod-panel"),
 ]

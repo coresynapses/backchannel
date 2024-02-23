@@ -26,39 +26,56 @@
     </nav>
     <div id="channel-banner">
       <h1>/{{name}}/ - {{desc}}</h1>
-      <h3 class="text-center"><a href="#">[Make Thread]</a></h3>
+      <h3 id="make-thread" class="text-center"><a href="#">[Reply to Thread]</a></h3>
+      <div id="post-thread-form" style="display: none">
+	<form action="{% url 'create-post' name thread.id %}" method="post">
+	  {% csrf_token %}
+	  <fieldset>
+	    <legend><a id="close-form" href="#">[Close]</a> - Create Post</legend>
+	    <label for="name">Name:</label>
+	    <input type="text" id="name-field" name="name"><br>
+	    <label for="title">Title:</label>
+	    <input type="text" id="title-field" name="title"><br>
+	    <label for="content">Content:</label>
+	    <textarea id="content-field" name="content"></textarea><br>
+	    <label for="file">File:</label>
+	    <input type="file" id="file-field" name="file"><br>
+	  </fieldset>
+	  <input type="submit" id="submit-button" value="Submit">
+	</form>
+      </div>
     </div>
-    <hl/>
     <div class="posts-container">
       <div id="initial-thread">
 	<img src="{% static 'main/images/circle.png' %}" class="post-thumbnail" alt=""/>
 	<div class="post-content">
 	  <div class="post-info">
 	    <b>
-	      <span class="post-title">{{thread.thread_title}};</span>
-	      <span class="post-author">By {{thread.thread_author}};</span>
+	      <span class="post-title">{{thread.title}};</span>
+	      <span class="post-author">By {{thread.author}};</span>
 	    </b>
-	    <span class="post-date">Posted on {{thread.thread_date}};</span>
-	    <span class="post-id">Po. {{thread.thread_id}}</span>
+	    <span class="post-date">Posted on {{thread.date}};</span>
+	    <span class="post-id">Po. {{thread.id}}</span>
 	  </div>
-	  <div class="post-text">{{thread.thread_content|linebreaks}}</div>
+	  <div class="post-text">{{thread.content|linebreaks}}</div>
 	</div>
       </div>
 
       {% for post in posts %}
       <div class="post">
-	{% if post.post_media_path %}
-	<img src="{{post.post_media_path}}" class="post-thumbnail" alt=""/>
+	{% if post.filepath %}
+	<img src="{{post.filepath}}" class="post-thumbnail" alt=""/>
 	{% endif %}
 	<div class="post-content">
 	  <div class="post-info">
 	    <b>
-	      <span class="post-author">By {% if post.post_author %}{{post.post_author}}{% else %}Anonymous{% endif %};</span>
+	      <span class="post-title">{{post.title}};</span>
+	      <span class="post-author">By {% if post.author %}{{post.author}}{% else %}Anonymous{% endif %};</span>
 	    </b>
-	    <span class="post-date">Posted on {{post.post_date}};</span>
-	    <span class="post-id">Po. {{post.post_id}}</span>
+	    <span class="post-date">Posted on {{post.date}};</span>
+	    <span class="post-id">Po. {{post.id}}</span>
 	  </div>
-	  <div class="post-text">{{post.post_content|linebreaks}}</div>
+	  <div class="post-text">{{post.content|linebreaks}}</div>
 	</div>
       </div>
       {% endfor %}
