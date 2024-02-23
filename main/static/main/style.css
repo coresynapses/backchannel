@@ -102,6 +102,9 @@ nav {
 /* Channels */
 
 #channel-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 60%;
     margin: auto;
     text-align: center;
@@ -117,6 +120,21 @@ nav {
     align-content: flex-start;
     align-items: flex-start;
     justify-content: center;
+}
+
+#post-thread-form {
+    width: 500px;
+}
+
+#post-thread-form>form>fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+#post-thread-form>form>fieldset>input,textarea {
+    width: 100%;
 }
 
 .thread {

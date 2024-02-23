@@ -5,6 +5,7 @@
     <title>{{name}} - {{desc}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="">
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
   </head>
   <body id="channel">
@@ -24,19 +25,36 @@
     </nav>
     <div id="channel-banner">
       <h1>/{{name}}/ - {{desc}}</h1>
-      <h3 class="text-center"><a href="#">[Make Thread]</a></h3>
+      <h3 id="make-thread" class="text-center"><a href="#">[Make Thread]</a></h3>
+      <div id="post-thread-form" style="display: none">
+	<form action="{% url 'create-thread' name %}" method="post">
+	  {% csrf_token %}
+	  <fieldset>
+	    <legend><a id="close-form" href="#">[Close]</a> - Create Thread</legend>
+	    <label for="name">Name:</label>
+	    <input type="text" id="name-field" name="name"><br>
+	    <label for="title">Title:</label>
+	    <input type="text" id="title-field" name="title"><br>
+	    <label for="content">Content:</label>
+	    <textarea id="content-field" name="content"></textarea><br>
+	    <label for="file">File:</label>
+	    <input type="file" id="file-field" name="file"><br>
+	  </fieldset>
+	    <input type="submit" id="submit-button" value="Submit">
+	</form>
+      </div>
     </div>
     <div id="threads-container">
       {% for thread in threads %}
       <div class="thread">
-	<a href="/{{name}}/thread/{{thread.thread_id}}">
+	<a href="/{{name}}/thread/{{thread.id}}">
 	<img src="{% static 'main/images/circle.png' %}" class="thread-thumbnail" alt="circle"/>
 	</a><br>
-	<a href="/{{name}}/thread/{{thread.thread_id}}">
-	  {{thread.thread_title}}
+	<a href="/{{name}}/thread/{{thread.id}}">
+	  {{thread.title}}
 	</a><br>
-	By {{thread.thread_author}}<br>
-	{{thread.thread_content}}
+	By {{thread.author}}<br>
+	{{thread.content}}
       </div>
       {% endfor %}
     </div>
