@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 <html>
   <head>
     <title>{{name}} - Thread {{thread.thread_id}}</title>
@@ -11,6 +12,9 @@
       <div id="nav-left">
 	<a class="hidden" href="#"><img class="nav-icon" src="{% static 'main/icons/sun.png' %}" alt="sun"/></a>
 	<a href="#"><img class="nav-icon" src="{% static 'main/icons/moon.png' %}" alt="moon"/></a>
+	<a href="/">[Home Page]</a>
+	<a href="/{{name}}/">[Go to {{name}}]</a>
+	---
 	<a href="#">[Custom CSS]</a>
 	<a href="#">[Custom JS]</a>
       </div>
@@ -23,6 +27,7 @@
       <h1>/{{name}}/ - {{desc}}</h1>
       <h3 class="text-center"><a href="#">[Make Thread]</a></h3>
     </div>
+    <hl/>
     <div class="posts-container">
       <div id="initial-thread">
 	<img src="{% static 'main/images/circle.png' %}" class="post-thumbnail" alt=""/>
@@ -33,16 +38,27 @@
 	      <span class="post-author">By {{thread.thread_author}};</span>
 	    </b>
 	    <span class="post-date">Posted on {{thread.thread_date}};</span>
-	    <span class="post-id">Po. {{thread.thread_id}};</span>
+	    <span class="post-id">Po. {{thread.thread_id}}</span>
 	  </div>
-	  <div class="post-text">{{thread.thread_content}}</div>
+	  <div class="post-text">{{thread.thread_content|linebreaks}}</div>
 	</div>
       </div>
 
       {% for post in posts %}
-      <div class="row">
-	<img src="/{{post.post_media_path}}" class="img-thumbnail" alt="circle"/>
-	<p>{{post.post_content}}</p>
+      <div class="post">
+	{% if post.post_media_path %}
+	<img src="{{post.post_media_path}}" class="post-thumbnail" alt=""/>
+	{% endif %}
+	<div class="post-content">
+	  <div class="post-info">
+	    <b>
+	      <span class="post-author">By {% if post.post_author %}{{post.post_author}}{% else %}Anonymous{% endif %};</span>
+	    </b>
+	    <span class="post-date">Posted on {{post.post_date}};</span>
+	    <span class="post-id">Po. {{post.post_id}}</span>
+	  </div>
+	  <div class="post-text">{{post.post_content|linebreaks}}</div>
+	</div>
       </div>
       {% endfor %}
 

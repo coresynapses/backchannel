@@ -5,11 +5,11 @@ from django.utils import timezone
 
 class Channel(models.Model):
     channel_name = models.CharField(max_length=20)
-    channel_desc = models.CharField(max_length=250)
+    channel_desc = models.CharField(max_length=250, default="nodesc")
     channel_threads = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.name
+        return self.channel_name
 
 
 class Thread(models.Model):
@@ -21,7 +21,7 @@ class Thread(models.Model):
     replies = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.choice_text
+        return self.title
 
 
 class Post(models.Model):
@@ -34,4 +34,4 @@ class Post(models.Model):
     replies = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.choice_text
+        return self.title

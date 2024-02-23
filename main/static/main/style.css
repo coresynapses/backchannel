@@ -76,7 +76,6 @@ nav {
     width: 60%;
     margin: auto;
     padding: 100px 0px;
-    /* background: red; */
 }
 
 #channel-container>h2 {
@@ -86,13 +85,18 @@ nav {
 #channel-row {
     display: flex;
     flex-direction: row;
-    align-items: flex-start stretch;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 #channel-row>.column {
     padding: 15px;
+    overflow: hidden;
+    height: 500px;
+    width: 250px;
 }
-
 
 
 /* Channels */
@@ -126,7 +130,8 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    overflow: hidden;
+    height: 500px;
 }
 
 .thread-thumbnail {
@@ -140,7 +145,16 @@ nav {
 #initial-thread {
     display: flex;
     flex-direction: row;
-    background: yellow;
+    /* background: yellow; */
+}
+
+.post {
+    display: flex;
+    flex-direction: row;
+    background: #ddd;
+    border: solid 1px blue;
+    margin: 10px;
+    padding: 15px;
 }
 
 .post-thumbnail {
@@ -149,15 +163,20 @@ nav {
 }
 
 .post-content {
-    background: green;
+    /* background: green; */
 }
 
 .post-info {
-    background: blue;
+    /* background: lightgreen; */
 }
 
 .post-text {
-    background: purple;
+    margin: 15px 30px;
+}
+
+.post-text>p {
+    margin: 0;
+    padding: 0;
 }
 
 .post-title {

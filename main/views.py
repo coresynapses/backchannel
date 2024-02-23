@@ -153,7 +153,7 @@ def thread(request, channel_name, thread_id):
             "post_date": "01-01-3030",
             "post_author": "Anyone",
             "post_replies": [13, 14, 82],
-            "post_content": "",
+            "post_content": "This is post 1",
             "post_media_path": "/static/main/images/circle.png",
         },
         {
@@ -161,7 +161,7 @@ def thread(request, channel_name, thread_id):
             "post_date": "01-01-3030",
             "post_author": "Someone",
             "post_replies": [3, 1, 8],
-            "post_content": "",
+            "post_content": "This is post 2",
             "post_media_path": "",
         },
         {
@@ -169,7 +169,7 @@ def thread(request, channel_name, thread_id):
             "post_date": "01-01-3030",
             "post_author": "",
             "post_replies": [1, 4, 2],
-            "post_content": "",
+            "post_content": "This is post 3",
             "post_media_path": "/static/main/images/circle.png",
         },
         {
@@ -177,7 +177,7 @@ def thread(request, channel_name, thread_id):
             "post_date": "01-01-3030",
             "post_author": "Robert",
             "post_replies": [3, 1, 2],
-            "post_content": "",
+            "post_content": "This is post 4",
             "post_media_path": "",
         },
         {
@@ -185,7 +185,7 @@ def thread(request, channel_name, thread_id):
             "post_date": "01-01-3030",
             "post_author": "",
             "post_replies": [1, 4, 8],
-            "post_content": "",
+            "post_content": "This is post 5",
             "post_media_path": "",
         },
     ]
