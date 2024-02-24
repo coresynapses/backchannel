@@ -1,0 +1,47 @@
+{% load static %}
+<nav>
+  <div id="nav-left">
+    <a class="hidden" id="light-mode" href="#"><img class="nav-icon" src="{% static 'main/icons/sun.png' %}" alt="sun"/></a>
+    <a id="dark-mode"  href="#"><img class="nav-icon" src="{% static 'main/icons/moon.png' %}" alt="moon"/></a>
+    <a href="/">[Home Page]</a>
+    ---
+    <a id="custom-css-button" href="#">[Custom CSS]</a>
+    <a id="custom-js-button" href="#">[Custom JS]</a>
+  </div>
+  <div id="nav-right">
+    <a href="/create-account">[Create Account]</a>
+    <a href="/log-in">[Log In]</a>
+  </div>
+</nav>
+
+<div id="custom-css-controller">
+  <div id="custom-css-container">
+    <div id="custom-css-header">
+      <h3>CSS Edit</h3>
+      <a id="custom-css-close" href="#">[Close]</a>
+    </div>
+    <div id="custom-css-mode">
+      <span class="custom-css-mode-switch" id="custom-css-switch-theme">Themes</span>
+      <span class="custom-css-mode-switch" id="custom-css-switch-tree">Tree-View</span>
+      <span class="custom-css-mode-switch active-mode" id="custom-css-switch-custom">Custom CSS</span>
+    </div>
+    <textarea id="custom-css-area"></textarea>
+    <input id="custom-css-save-btn" type="button" value="Save">
+  </div>
+</div>
+
+<div id="custom-js-controller" style="display: none;">
+  <div id="custom-js-container">
+    <div id="custom-js-header">
+      <h3>JS Edit</h3>
+      <a id="custom-js-close" href="#">[Close]</a>
+    </div>
+    <div id="custom-js-mode">
+      <span class="custom-js-mode-switch" id="custom-js-switch-theme">Themes</span>
+      <span class="custom-js-mode-switch" id="custom-js-switch-tree">Tree-View</span>
+      <span class="custom-js-mode-switch active-mode" id="custom-js-switch-custom">Custom JS</span>
+    </div>
+    <textarea id="custom-js-area"></textarea>
+    <input id="custom-js-save-btn" type="button" value="Save">
+  </div>
+</div>

@@ -217,3 +217,117 @@ nav {
     display: inline;
     color: green;
 }
+
+
+/* Custom CSS Controller */
+
+#custom-css-controller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#custom-css-container {
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    background: #eee;
+    opacity: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#custom-css-container>* {
+    margin: 10px 0px;
+}
+
+#custom-css-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#custom-css-mode {
+    display: flex;
+}
+
+.custom-css-mode-switch {
+    border: 1px solid blue;
+    border-radius: 0;
+    background: white;
+    color: blue;
+    padding: 7px;
+}
+
+.active-mode {
+    background: blue;
+    color: white;
+    border: 1px solid white;
+}
+
+#custom-css-area {
+    padding: 0px;
+    margin: 0;
+}
+
+
+/* Custom JS Controller */
+
+#custom-js-controller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#custom-js-container {
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    background: #eee;
+    opacity: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#custom-js-container>* {
+    margin: 10px 0px;
+}
+
+#custom-js-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#custom-js-mode {
+    display: flex;
+}
+
+.custom-js-mode-switch {
+    border: 1px solid blue;
+    border-radius: 0;
+    background: white;
+    color: blue;
+    padding: 7px;
+}
+
+.active-mode {
+    background: blue;
+    color: white;
+    border: 1px solid white;
+}
+
+#custom-js-area {
+    padding: 0px;
+    margin: 0;
+}
