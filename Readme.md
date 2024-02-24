@@ -23,10 +23,14 @@ Requirements:
 
 Once these technologies are installed, you need create your PostgreSQL
 user:
-`createuser --interactive`
+```
+createuser --interactive
+```
 
 Create a database named "backchan" using the following command:
-`createdb backchan`
+```
+createdb backchan
+```
 
 Create the file named ".pg_service.conf" and save it in the
 corresponding directory:
@@ -35,11 +39,13 @@ corresponding directory:
 
 The contents should be as follows:
 
-``[backchan]
+```
+[backchan]
 host=localhost
 user=[psql_username]
 dbname=backchan
-port=5432``
+port=5432
+```
 
 Create the PostgreSQL file and save it in the corresponding directory:
 - Linux or macOS: ~/.pgpass
@@ -47,11 +53,15 @@ Create the PostgreSQL file and save it in the corresponding directory:
 
 The contents should be as follows:
 
-`localhost:5432:backchan:[psql_username]:[psql_password]`
+```
+localhost:5432:backchan:[psql_username]:[psql_password]
+```
 
 Then go to the root directory of the repository and run:
 
-`python manage.py runserver`
+```
+python manage.py runserver
+```
 
 Go the following url in your browser:
 https://localhost:8000
