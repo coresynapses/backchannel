@@ -1,19 +1,65 @@
-# Backchan
+# Backchannel
 
-Backchan is 4chan and Reddit hybrid.
+A backchannel is a secret line of communication.
 
-It's short for backchannel (a secret line of communication).
+Backchannel is a Multimedia and Code-collaborative board with a focus on
+the transformation of uploaded files.
 
-It's an anonynomous imageboard with multimedia and news aggregator
-functionality.
+Users without accounts can make threads and post to threads and have
+limited multimedia and code functionality available to them.
 
-An upgrade on both Reddit and 4chan.
+Users with accounts have greater multimedia and code functionality
+subject to reasonable generous limits.
+
+Paid users can create boards powered by the Matrix protocol and these
+are the backchannels.
+
+## How to run
+
+Requirements:
+- Python 3.11
+- Django 4.2
+- PostgreSQL 16.1
+
+Once these technologies are installed, you need create your PostgreSQL
+user:
+`createuser --interactive`
+
+Create a database named "backchan" using the following command:
+`createdb backchan`
+
+Create the file named ".pg_service.conf" and save it in the
+corresponding directory:
+- Linux or macOS: ~/.pg_service.conf
+- Windows: %APPDATA%\postgresql\.pg_service.conf
+
+The contents should be as follows:
+`[backchan]
+host=localhost
+user=[psql_username]
+dbname=backchan
+port=5432`
+
+Create the PostgreSQL file and save it in the corresponding directory:
+- Linux or macOS: ~/.pgpass
+- Windows: %APPDATA%\postgresql\pgpass.conf
+
+The contents should be as follows:
+`localhost:5432:backchan:[psql_username]:[psql_password]`
+
+Then go to the root directory of the repository and run:
+`python manage.py runserver`
+
+Go the following url in your browser:
+https://localhost:8000
+
+The website should be working.
 
 ## Technologies Used
 
 Frontend:
-- Tailwind
-- React
+- Vanilla CSS
+- Vanilla JS
 
 Backend:
 - Python
