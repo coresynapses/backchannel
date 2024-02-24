@@ -47,7 +47,7 @@ def create_thread(request, channel_name):
         "desc": desc,
         "threads": threads,
     }
-    return render(request, "main/channel.html", context)
+    return HttpResponseRedirect(f"/{channel_name}/thread/{new_thread.id}")
 
 def thread(request, channel_name, thread_id):
     channel = Channel.objects.filter(channel_name=channel_name)
@@ -79,8 +79,8 @@ def create_post(request, channel_name, thread_id):
     content = request.POST["content"]
     uploaded_file = request.POST["file"]
     date = timezone.now()
-    new_post = Post(channel=channel, thread=thread, author=name, title=title, content=content, filepath=uploaded_file, date=date)
-    new_post.save()
+    new_thread = Thread(channel=channel, author=name, title=title, content=content, filepath=uploaded_file, date=date)
+    new_thread.save()
     return HttpResponseRedirect(f"/{channel_name}/thread/{thread_id}")
 
 def user_settings(request, user_id):
