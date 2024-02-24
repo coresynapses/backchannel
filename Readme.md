@@ -34,20 +34,23 @@ corresponding directory:
 - Windows: %APPDATA%\postgresql\.pg_service.conf
 
 The contents should be as follows:
-`[backchan]
+
+``[backchan]
 host=localhost
 user=[psql_username]
 dbname=backchan
-port=5432`
+port=5432``
 
 Create the PostgreSQL file and save it in the corresponding directory:
 - Linux or macOS: ~/.pgpass
 - Windows: %APPDATA%\postgresql\pgpass.conf
 
 The contents should be as follows:
+
 `localhost:5432:backchan:[psql_username]:[psql_password]`
 
 Then go to the root directory of the repository and run:
+
 `python manage.py runserver`
 
 Go the following url in your browser:
