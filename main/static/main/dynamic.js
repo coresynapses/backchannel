@@ -49,6 +49,8 @@
     custom_css_button = document.getElementById("custom-css-button");
     custom_css_controller = document.getElementById("custom-css-controller");
     custom_css_close = document.getElementById("custom-css-close");
+    custom_css_area = document.getElementById("custom-css-area");
+    custom_css_save = document.getElementById("custom-css-close");
 
     custom_css_button.addEventListener("click", (event) => {
 	custom_css_controller.style.display = "flex";
@@ -58,9 +60,17 @@
 	custom_css_controller.style.display = "none";
     });
 
+    custom_css_save.addEventListener("click", (event) => {
+	localStorage.setItem("custom-css", custom_css_area.value);
+	console.log(localStorage.getItem("custom-css"));
+    });
+    
+
     custom_js_button = document.getElementById("custom-js-button");
     custom_js_controller = document.getElementById("custom-js-controller");
     custom_js_close = document.getElementById("custom-js-close");
+    custom_js_area = document.getElementById("custom-js-area");
+    custom_js_save = document.getElementById("custom-js-close");
 
     custom_js_button.addEventListener("click", (event) => {
 	custom_js_controller.style.display = "flex";
@@ -68,5 +78,10 @@
 
     custom_js_close.addEventListener("click", (event) => {
 	custom_js_controller.style.display = "none";
+    });
+
+    custom_js_save.addEventListener("click", (event) => {
+	localStorage.setItem("custom-js", custom_js_area.value);
+	console.log(localStorage.getItem("custom-js"));
     });
 })();
